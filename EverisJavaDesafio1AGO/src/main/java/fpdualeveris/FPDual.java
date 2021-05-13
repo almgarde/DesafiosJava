@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import variables.Developer;
 
-/**
- * Hello world!
- *
- */
+
 public class FPDual {
 
 	final static Logger LOGGER = LoggerFactory.getLogger(FPDual.class);
