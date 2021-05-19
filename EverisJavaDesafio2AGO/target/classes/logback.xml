@@ -1,0 +1,29 @@
+<configuration debug="false" scan="true"
+	scanPeriod="10 seconds">
+
+	<appender name="EverisLogFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>C://dev//logs//everisLogFile-${logDate}.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>C://dev//logs//everisLogFile-${logDate}.%i.log.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>3</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>50KB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [%method]
+				- %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="EverisLogFile" />
+	</root>
+
+</configuration>
